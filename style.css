@@ -1,0 +1,26 @@
+body{
+
+    background-size: cover;  
+    background-position: center;  
+    
+    }
+    
+    .heading , .note
+    {
+    font-size: 23px;
+    width: 100%;
+    margin: 0px;
+    }
+    
+    #status , #baby-status
+    {
+    font-size: 18px;
+    }
+    
+    canvas{
+    
+    box-shadow: 5px 5px 25px blue;
+    border-radius: 10px;
+    margin-top: 30px;
+    
+    }
