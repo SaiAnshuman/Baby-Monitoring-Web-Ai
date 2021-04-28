@@ -4,7 +4,7 @@ alarm_sound = "";
 
 function preload(){
 
-  alarm_sound = loadSound("1.mp3");
+  alarm_sound = loadSound("alarm.mp3");
 
 }
 
@@ -61,8 +61,11 @@ if ( status != ""){
     b = random(255);
 
     if(objects.length.person = "" ){
-
+           
+         alarm_sound.rate(2);
+         alarm_sound.volume(1);
          alarm_sound.play();
+         
          document.getElementById("status").innerHTML = "Status : Baby Not Identified";
          document.getElementById("baby_status").innerHTML = "Baby Not Found! " ;
 
