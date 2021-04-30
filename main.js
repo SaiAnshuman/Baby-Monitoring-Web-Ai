@@ -80,7 +80,7 @@ if ( status != ""){
     alarm_sound.stop();
     
     document.getElementById("status").innerHTML = "Status : Baby Identified";
-    document.getElementById("baby_status").innerHTML = "Baby  Found! " ;
+    document.getElementById("baby-status").innerHTML = "Baby  Found! " ;
 
     fill(r,g,b);
     percent = floor(objects[i].confidence * 100);
