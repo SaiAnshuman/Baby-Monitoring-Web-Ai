@@ -60,39 +60,44 @@ if ( status != ""){
     g = random(255);
     b = random(255);
 
-    if(objects.length.person = "" ){
-           
-         alarm_sound.rate(2);
-         alarm_sound.volume(1);
-         alarm_sound.play();
-         
-         document.getElementById("status").innerHTML = "Status : Baby Not Identified";
-         document.getElementById("baby_status").innerHTML = "Baby Not Found! " ;
-
-    }
-
-    else {
-
    for( i=0 ; i < objects.length ; i++){
 
-
-
-    alarm_sound.stop();
-    
     document.getElementById("status").innerHTML = "Status : Baby Identified";
-    document.getElementById("baby-status").innerHTML = "Baby  Found! " ;
-
+    
     fill(r,g,b);
     percent = floor(objects[i].confidence * 100);
     text(objects[i].label + " " + percent + "% " ,objects[i].x + 20 , objects[i].y + 20);
     noFill();
     stroke(r,g,b);
     rect(objects[i].x , objects[i].y , objects[i].width , objects[i].height);
+
+    if(objects[i].label == "person"){
+
+        document.getElementById("baby-status").innerHTML = "Baby  Found!" ;
+        alarm_sound.stop();
+
+    }
+
+    else{
+
+        document.getElementById("baby-status").innerHTML = "Baby Not Found!" ;
+        alarm_sound.play();
+
+    }
     
 
    }
-}
+  
+   if(objects.length == 0){
+
+    document.getElementById("baby-status").innerHTML = "Baby Not Found!" ;
+    alarm_sound.play();
+
+
+   }
 
 }
 
 }
+
+
